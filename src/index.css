@@ -1,0 +1,143 @@
+@tailwind  base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #3355ff;
+  --primary-hover: #2244ee;
+  --bg-sidebar: #f5f7f9;
+  --bg-main: #ffffff;
+  --text-primary: #1a1a1a;
+  --text-secondary: #6b7280;
+  --text-light: #94a3b8;
+  --border-color: #e5e7eb;
+}
+
+.dark {
+  --primary: #3355ff;
+  --primary-hover: #4466ff;
+  --bg-sidebar: #1a1f2b;
+  --bg-main: #111827;
+  --text-primary: #f3f4f6;
+  --text-secondary: #d1d5db;
+  --text-light: #9ca3af;
+  --border-color: #374151;
+}
+
+@layer base {
+  body {
+    @apply bg-[var(--bg-main)] text-[var(--text-primary)];
+  }
+}
+
+.typing-indicator {
+  display: inline-flex;
+}
+
+.typing-indicator span {
+  height: 8px;
+  width: 8px;
+  background-color: var(--text-light);
+  border-radius: 50%;
+  margin: 0 2px;
+  animation: typing 1.5s infinite;
+}
+
+.typing-indicator span:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.typing-indicator span:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+@keyframes typing {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateY(-4px);
+    opacity: 1;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--text-light);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}
+
+/* Animations */
+.slide-in-right {
+  animation: slideInRight 0.3s forwards;
+}
+
+.slide-in-left {
+  animation: slideInLeft 0.3s forwards;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Custom utility classes */
+.text-truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Border colors for activity timeline */
+.border-blue-400 {
+  border-color: #60a5fa;
+}
+
+.border-green-400 {
+  border-color: #34d399;
+}
+
+.border-red-400 {
+  border-color: #f87171;
+}
+
+.border-purple-400 {
+  border-color: #a78bfa;
+}
+
+/* Add hover transition to all buttons */
+button {
+  transition: all 0.2s ease;
+}
+ 
